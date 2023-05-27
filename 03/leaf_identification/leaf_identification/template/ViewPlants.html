@@ -1,0 +1,125 @@
+{% include 'AdminPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+
+                .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        border-radius: 4px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-link {
+        background-color: #8bc34a;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-link:hover {
+        background-color: #689f38;
+        color: #000000;
+    }
+
+   .containerP {
+      margin: 20px auto;
+      padding: 20px;
+      width: 1200px;
+  }
+
+    </style>
+</head>
+
+<!--<h2>View Plants</h2>-->
+<!--<table id="cs">-->
+<!--    <tr>-->
+<!--        <td><h4>SL.No</h4></td>-->
+
+<!--        <td><h4>Name</h4> </td>-->
+
+
+
+
+
+<!--    </tr>-->
+<!--    {% for row in data %}-->
+
+<!--  <tr>-->
+<!--      <td height="87"><div align="center">{{loop.index }}</div></td>-->
+<!--      <td><div align="center">{{ row['name'] }}</div></td>-->
+<!--       <td width="80"><div align="center" ><a href="/LinkEditPlant?id={{ row['idcategory'] }}">Edit</a></div></td>-->
+<!--            <td width="80"><div align="center" ><a href="/DeletePlant?id={{ row['idcategory'] }}">Delete</a></div></td>-->
+<!--      <td width="80"><div align="center" ><a href="/LinkUploadImage?id={{ row['idcategory'] }}">Upload Image</a></div></td>-->
+<!--       <td width="80"><div align="center" ><a href="/ViewImage?id={{ row['idcategory'] }}">View Images</a></div></td>-->
+<!--             <td width="80"><div align="center" ><a href="/LinkAddVariety?id={{ row['idcategory'] }}">Add Variety</a></div></td>-->
+<!--        <td width="80"><div align="center" ><a href="/ViewVariety?id={{ row['idcategory'] }}">View Variety</a></div></td>-->
+<!--        <td width="80"><div align="center" ><a href="/LinkAddDisease?id={{ row['idcategory'] }}">Add Disease</a></div></td>-->
+<!--  <td width="80"><div align="center" ><a href="/ViewDisease?id={{ row['idcategory'] }}">View Disease</a></div></td>-->
+<!--         </tr>-->
+
+<!--        {% endfor %}-->
+
+
+<!--</table>-->
+<div class="containerP">
+<h2>View Plants</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th></th><th></th>
+      <th scope="col">Name</th>
+      <th scope="col"><center>Actions</center></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data %}
+      <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td></td><td></td>
+        <td>{{row['name']}}</td>
+        <td>
+              <div class="btn-group" role="group" aria-label="Actions">
+        <a href="/LinkEditPlant?id={{ row['idcategory'] }}" class="btn btn-link">Edit</a>
+        <a href="/DeletePlant?id={{ row['idcategory'] }}" class="btn btn-link">Delete</a>
+        <a href="/LinkUploadImage?id={{ row['idcategory'] }}" class="btn btn-link">Upload Image</a>
+        <a href="/ViewImage?id={{ row['idcategory'] }}" class="btn btn-link">View Images</a>
+        <a href="/LinkAddVariety?id={{ row['idcategory'] }}" class="btn btn-link">Add Variety</a>
+        <a href="/ViewVariety?id={{ row['idcategory'] }}" class="btn btn-link">View Variety</a>
+        <a href="/LinkAddDisease?id={{ row['idcategory'] }}" class="btn btn-link">Add Disease</a>
+        <a href="/ViewDisease?id={{ row['idcategory'] }}" class="btn btn-link">View Disease</a>
+    </div>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% include 'LoginFooter.html' %}

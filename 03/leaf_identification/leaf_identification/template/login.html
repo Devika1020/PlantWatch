@@ -1,0 +1,115 @@
+{% include 'LoginHeader.html' %}
+<html lang="en">
+<body>
+<!--<form id="form1" name="form1" method="post" action="/login1" align="center">-->
+
+<!--  <table align="center" width="200" border="0" >-->
+<!--    <tr>-->
+<!--      <td colspan="1" align="right">-->
+<!--        <h2 >LOGIN</h2>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td colspan="2">&nbsp;</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Username</th>-->
+<!--      <td><label for="uname"></label>-->
+<!--      <input type="text" name="un" id="uname" align="center" class="form-control" required/></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Password</th>-->
+<!--      <td><label for="passwd"></label>-->
+<!--      <input type="password" name="pass" id="passwd" align="center" class="form-control" required/></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+
+<!--      <td><input  name="login" type="submit" id="login" value="Login" align="right" class="section-btn"/></td>-->
+
+
+<!--    </tr>-->
+<!--  </table>-->
+
+<!--</form>-->
+
+<style>
+    .login-form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-form h2 {
+        text-align: center;
+    }
+
+    .login-form table {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .login-form th {
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .login-form td {
+        padding: 5px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .login-form input[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+<br><br>
+<div class="login-form">
+    <form id="form1" name="form1" method="post" action="/login1">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h2>LOGIN</h2>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>
+                    <input type="text" name="un" id="uname" class="form-control" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>
+                    <input type="password" name="pass" id="passwd" class="form-control" required>
+                </td>
+            </tr>
+          <br>
+            <tr>
+                <td colspan="2">
+                    <input name="login" type="submit" id="login" value="Login" class="section-btn">
+                </td>
+            </tr>
+        </table><br><br>
+  <span><center>Don't have an account?<a href="/LinkAddUser" style="color:skyblue">&nbsp;<b>Signup</b></a></center></span>
+    </form>
+</div>
+</body>
+</html>
+{% include 'LoginFooter.html' %}

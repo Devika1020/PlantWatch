@@ -1,0 +1,85 @@
+{% include 'User/UserPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+
+<!--<h2>View User Query</h2>-->
+<!--<table id="cs">-->
+<!--    <tr>-->
+<!--        <td><h4>SL.No</h4></td>-->
+
+<!--        <td><h4>Query</h4> </td>-->
+<!--         <td><h4>Reply</h4> </td>-->
+<!--           <td><h4>Query Date</h4> </td>-->
+
+
+
+
+
+
+
+<!--    </tr>-->
+<!--    {% for row in data %}-->
+
+<!--  <tr>-->
+<!--      <td height="87"><div align="center">{{loop.index }}</div></td>-->
+<!--      <td><div align="center">{{ row['query'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['reply'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['query_date'] }}</div></td>-->
+
+
+<!--         </tr>-->
+
+<!--        {% endfor %}-->
+
+
+<!--</table>-->
+<div class="container mt-5">
+  <h2>View User Query</h2>
+  <table class="table table-bordered mt-3">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">SL.No</th>
+        <th scope="col">Query</th>
+        <th scope="col">Reply</th>
+        <th scope="col">Query Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ row['query'] }}</td>
+        {% if row['reply'] == 'pending' %}
+        <td class="text-danger">reply {{ row['reply'] }}</td>
+        {% else %}
+        <td><span style="color: green;">replied:&nbsp;</span>{{ row['reply'] }}</td>
+        {% endif %}
+        <td>{{ row['query_date'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% include 'LoginFooter.html' %}

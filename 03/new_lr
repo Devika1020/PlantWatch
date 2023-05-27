@@ -1,0 +1,355 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.2.3-falcon-alpha-community-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema leaf_identification
+--
+
+CREATE DATABASE IF NOT EXISTS leaf_identification;
+USE leaf_identification;
+
+--
+-- Definition of table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
+  `idcategory` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `idplant_category` varchar(45) NOT NULL,
+  PRIMARY KEY (`idcategory`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` (`idcategory`,`name`,`idplant_category`) VALUES 
+ (1,'Rambutan','1');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+
+
+--
+-- Definition of table `disease`
+--
+
+DROP TABLE IF EXISTS `disease`;
+CREATE TABLE `disease` (
+  `iddisease` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` varchar(45) NOT NULL,
+  `disease_name` varchar(45) NOT NULL,
+  `disease_desc` varchar(450) NOT NULL,
+  `image_path` varchar(45) NOT NULL,
+  PRIMARY KEY (`iddisease`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `disease`
+--
+
+/*!40000 ALTER TABLE `disease` DISABLE KEYS */;
+/*!40000 ALTER TABLE `disease` ENABLE KEYS */;
+
+
+--
+-- Definition of table `disease_solution`
+--
+
+DROP TABLE IF EXISTS `disease_solution`;
+CREATE TABLE `disease_solution` (
+  `iddisease_solution` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `symptom` varchar(45) NOT NULL,
+  `disease_details` varchar(450) NOT NULL,
+  `solution` varchar(450) NOT NULL,
+  PRIMARY KEY (`iddisease_solution`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `disease_solution`
+--
+
+/*!40000 ALTER TABLE `disease_solution` DISABLE KEYS */;
+INSERT INTO `disease_solution` (`iddisease_solution`,`symptom`,`disease_details`,`solution`) VALUES 
+ (1,'Mosaic leaf pattern','Fungal disease','Need more water'),
+ (2,'Birds-eye spot on berries ','Fungal disease','Need sunlight'),
+ (3,'Damping off of seedlings','Fungal disease','Need more water essential that are provided via soil'),
+ (4,'Yellowing of leaves','Fungal disease','Need potassium essential nutrients that are provided via soil'),
+ (5,'Leaf spot with yellow halo','Bacterial disease ','Need Nitrogen essential nutrients that are provided via soil'),
+ (6,'Fruit spot','Bacterial disease ','Phosphorus essential nutrients that are provided via soil');
+/*!40000 ALTER TABLE `disease_solution` ENABLE KEYS */;
+
+
+--
+-- Definition of table `itemcart`
+--
+
+DROP TABLE IF EXISTS `itemcart`;
+CREATE TABLE `itemcart` (
+  `idcart` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `userid` varchar(45) NOT NULL,
+  `idshopitem` varchar(45) NOT NULL,
+  `qty` varchar(45) NOT NULL,
+  `price` varchar(45) NOT NULL,
+  PRIMARY KEY (`idcart`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `itemcart`
+--
+
+/*!40000 ALTER TABLE `itemcart` DISABLE KEYS */;
+INSERT INTO `itemcart` (`idcart`,`userid`,`idshopitem`,`qty`,`price`) VALUES 
+ (4,'anu','2','6','720.0'),
+ (5,'anu','3','3','750.0');
+/*!40000 ALTER TABLE `itemcart` ENABLE KEYS */;
+
+
+--
+-- Definition of table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+CREATE TABLE `login` (
+  `admin_id` varchar(20) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`admin_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` (`admin_id`,`password`) VALUES 
+ ('admin','admin');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+
+
+--
+-- Definition of table `plant_category`
+--
+
+DROP TABLE IF EXISTS `plant_category`;
+CREATE TABLE `plant_category` (
+  `idplant_category` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`idplant_category`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `plant_category`
+--
+
+/*!40000 ALTER TABLE `plant_category` DISABLE KEYS */;
+INSERT INTO `plant_category` (`idplant_category`,`name`) VALUES 
+ (1,'Fruit'),
+ (2,'Medicine'),
+ (3,'Vegetable');
+/*!40000 ALTER TABLE `plant_category` ENABLE KEYS */;
+
+
+--
+-- Definition of table `plant_details`
+--
+
+DROP TABLE IF EXISTS `plant_details`;
+CREATE TABLE `plant_details` (
+  `idplant_details` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `leaf_description` varchar(450) NOT NULL,
+  `category_id` varchar(45) NOT NULL,
+  PRIMARY KEY (`idplant_details`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `plant_details`
+--
+
+/*!40000 ALTER TABLE `plant_details` DISABLE KEYS */;
+INSERT INTO `plant_details` (`idplant_details`,`name`,`leaf_description`,`category_id`) VALUES 
+ (1,'N18','Rambutan fruits are highly nutritious, being rich in carbohydrates, vitamins, calcium, magnesium and potassium. The rind and the edible portion of the fruits are rich in anti-oxidants which are excellent in fighting against the growth of cancer cells','1');
+/*!40000 ALTER TABLE `plant_details` ENABLE KEYS */;
+
+
+--
+-- Definition of table `plant_image`
+--
+
+DROP TABLE IF EXISTS `plant_image`;
+CREATE TABLE `plant_image` (
+  `idplant_image` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` varchar(45) NOT NULL,
+  `file_path` varchar(405) NOT NULL,
+  PRIMARY KEY (`idplant_image`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `plant_image`
+--
+
+/*!40000 ALTER TABLE `plant_image` DISABLE KEYS */;
+INSERT INTO `plant_image` (`idplant_image`,`category_id`,`file_path`) VALUES 
+ (1,'1','r1.jpg');
+/*!40000 ALTER TABLE `plant_image` ENABLE KEYS */;
+
+
+--
+-- Definition of table `selling_category`
+--
+
+DROP TABLE IF EXISTS `selling_category`;
+CREATE TABLE `selling_category` (
+  `idselling_category` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`idselling_category`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `selling_category`
+--
+
+/*!40000 ALTER TABLE `selling_category` DISABLE KEYS */;
+INSERT INTO `selling_category` (`idselling_category`,`name`) VALUES 
+ (1,'Fertilizer'),
+ (2,'Plant Nutrition'),
+ (3,'Organic Substence');
+/*!40000 ALTER TABLE `selling_category` ENABLE KEYS */;
+
+
+--
+-- Definition of table `shop_items`
+--
+
+DROP TABLE IF EXISTS `shop_items`;
+CREATE TABLE `shop_items` (
+  `idshop_items` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idselling_category` varchar(45) NOT NULL,
+  `price` varchar(45) NOT NULL,
+  `quantity` varchar(45) NOT NULL,
+  `idshop` varchar(45) NOT NULL,
+  `item_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`idshop_items`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `shop_items`
+--
+
+/*!40000 ALTER TABLE `shop_items` DISABLE KEYS */;
+INSERT INTO `shop_items` (`idshop_items`,`idselling_category`,`price`,`quantity`,`idshop`,`item_name`) VALUES 
+ (1,'1','150','3','vyttila','NPK 20 20 20 Fertilizer'),
+ (2,'1','120','1','kada','Racol'),
+ (3,'1','250','1','kada','Nitrogen fertilizers'),
+ (4,'1','570','1','kada','Phosphorus fertilizers'),
+ (5,'1','789','1','kada','Micronutrient fertilizers'),
+ (6,'1','456','1','kada','Potassium fertilizers'),
+ (7,'2','2000','1','kada','Organic Plant Growth Stimulant'),
+ (8,'2','2500','1','kada','Plant Growth Promoters'),
+ (9,'2','5000','1','kada','Hydrolyzed Protein Based Organic Nitrogen'),
+ (10,'2','6000','1','kada','Powder DA-6 Diethyl Amino Ethylhexanoic Acid'),
+ (11,'3','2600','1','kada','White Ecotan'),
+ (12,'3','3500','1','kada','Ultratan BFS Replacement Syntans'),
+ (13,'3','3200','1','kada','Triethanolamine'),
+ (14,'3','4000','1','kada','Liquid Synthetic Organic Resin Tanning Agent');
+/*!40000 ALTER TABLE `shop_items` ENABLE KEYS */;
+
+
+--
+-- Definition of table `shops`
+--
+
+DROP TABLE IF EXISTS `shops`;
+CREATE TABLE `shops` (
+  `idshop` varchar(20) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `phone` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`idshop`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `shops`
+--
+
+/*!40000 ALTER TABLE `shops` DISABLE KEYS */;
+INSERT INTO `shops` (`idshop`,`address`,`phone`,`email`,`password`,`name`) VALUES 
+ ('kada','Kada Agri','9963524101','kada@gmail.com','kadla@gmail.com','kada'),
+ ('vyttila','near over bridge','9947901787','vyttila@gmail.com','vyttila','Agro Shop');
+/*!40000 ALTER TABLE `shops` ENABLE KEYS */;
+
+
+--
+-- Definition of table `user_details`
+--
+
+DROP TABLE IF EXISTS `user_details`;
+CREATE TABLE `user_details` (
+  `user_id` varchar(20) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `address` varchar(450) NOT NULL,
+  `phone` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_details`
+--
+
+/*!40000 ALTER TABLE `user_details` DISABLE KEYS */;
+INSERT INTO `user_details` (`user_id`,`name`,`address`,`phone`,`email`,`password`) VALUES 
+ ('anju','anju','KAITHAVELI HOUSE\r\nNORTH CHELLANAM P O\r\nMALAGHAPADY','7894561235','anju19@gmail.com','anju'),
+ ('anu','anu','Punnackal house\r\nEzhupunna South po','9876543210','anu@gmail.com','anu');
+/*!40000 ALTER TABLE `user_details` ENABLE KEYS */;
+
+
+--
+-- Definition of table `user_query`
+--
+
+DROP TABLE IF EXISTS `user_query`;
+CREATE TABLE `user_query` (
+  `iduser_query` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(45) NOT NULL,
+  `query` varchar(450) NOT NULL,
+  `reply` varchar(45) NOT NULL,
+  `query_date` varchar(45) NOT NULL,
+  PRIMARY KEY (`iduser_query`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_query`
+--
+
+/*!40000 ALTER TABLE `user_query` DISABLE KEYS */;
+INSERT INTO `user_query` (`iduser_query`,`user_id`,`query`,`reply`,`query_date`) VALUES 
+ (1,'sam','any new disease',' ok','02-07-2021');
+/*!40000 ALTER TABLE `user_query` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

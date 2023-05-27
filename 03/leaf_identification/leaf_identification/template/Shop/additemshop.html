@@ -1,0 +1,141 @@
+{% include 'Shop/ShopHeader.html' %}
+
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+<!--<form id="form1" name="form1" method="post" action="../adding_item">-->
+
+<!--        <table width="318" border="0" align="center" id="cs">-->
+<!--            <tr><th colspan="2"><h2>Add Item</h2></th></tr>-->
+
+<!--                <tr>-->
+<!--                    <th>Name</th>-->
+<!--                    <td><input name="name"  type="text" required ></td>-->
+<!--                    <input type="hidden" value ="{{id}}" name ="idsellcat">-->
+<!--                </tr><br>-->
+<!--            <tr>-->
+<!--                <th>Price</th>-->
+<!--                <td><input name="price"  type="number" required min="0" ></td>-->
+<!--            </tr><br>-->
+<!--             <tr>-->
+<!--                <th>Quantity</th>-->
+<!--                <td><input name="qty"  type="number" required min="1" ></td>-->
+<!--            </tr>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+<!--</form>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form id="form1" name="form1" method="post" action="../adding_item">
+        <h2 class="text-center mb-4">Add Item</h2>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input name="name" id="name" type="text" class="form-control" required>
+          <input type="hidden" value="{{id}}" name="idsellcat">
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input name="price" id="price" type="number" class="form-control" required min="0">
+        </div>
+        <div class="form-group">
+          <label for="qty">Quantity</label>
+          <input name="qty" id="qty" type="number" class="form-control" required min="1">
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<!--<head>-->
+<!--    <style>-->
+<!--         #cs {-->
+<!--            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;-->
+<!--            border-collapse: collapse;-->
+<!--            width: 100%;-->
+<!--        }-->
+
+<!--            #cs td, #cs th {-->
+
+<!--                padding: 8px;-->
+<!--            }-->
+
+
+
+
+
+<!--            #cs th {-->
+<!--                padding-top: 12px;-->
+<!--                padding-bottom: 12px;-->
+<!--                text-align: left;-->
+<!--            }-->
+<!--    </style>-->
+<!--</head>-->
+
+<!--<h2>View Plants</h2>-->
+<!--<table id="cs">-->
+<!--    <tr>-->
+<!--        <td><h4>SL.No</h4></td>-->
+
+<!--        <td><h4>Name</h4> </td>-->
+
+
+
+
+
+
+<!--    </tr>-->
+<!--    {% for row in data %}-->
+
+<!--  <tr>-->
+<!--      <td height="87"><div align="center">{{loop.index }}</div></td>-->
+<!--      <td><div align="center">{{ row['name'] }}</div></td>-->
+<!--      <td><div align="center"><a href="../add_plant_to_shop?id={{ row['idcategory'] }}">Add</a></div></td>-->
+<!--&lt;!&ndash;      <td><div align="center">{{ row['leaf_description'] }}</div></td>&ndash;&gt;-->
+<!--&lt;!&ndash;       <td width="80"><div align="center" ><a href="/#ViewImage?id={{ row['idcategory'] }}">View Images</a></div></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td width="80"><div align="center" ><a href="#/ViewVariety?id={{ row['idcategory'] }}">View Variety</a></div></td>&ndash;&gt;-->
+<!--&lt;!&ndash;  <td width="80"><div align="center" ><a href="#/ViewDisease?id={{ row['idcategory'] }}">View Disease</a></div></td>&ndash;&gt;-->
+<!--         </tr>-->
+
+<!--        {% endfor %}-->
+
+
+<!--</table>-->
+{% include 'LoginFooter.html' %}

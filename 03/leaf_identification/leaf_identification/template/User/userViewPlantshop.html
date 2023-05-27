@@ -1,0 +1,63 @@
+{% include 'User/UserPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+
+<h2>View Plants</h2>
+<table id="cs">
+    <tr>
+
+        <td><h4>SL.No</h4></td>
+        <td><h4>Name</h4> </td>
+        <td><h4>Quantity</h4></td>
+        <td><h4>Price</h4></td>
+            <td><h4>Qty</h4></td>
+            <td><h4>Add To Cart</h4></td>
+
+
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <form id="form1" name="form1" method="post" action="../add_to_cart?id={{row['idshop_items']}}">
+      <td height="87"><div align="center">{{loop.index }}</div></td>
+      <td><div align="center">{{ row['name'] }}</div></td>
+      <td><div align="center">{{ row['quantity'] }}</div></td>
+      <td><div align="center">{{ row['price'] }}</div></td>
+          <input type="hidden" value="{{ row['quantity'] }}" name="quantity" >
+          <input type="hidden" value="{{ row['price'] }}" name="price" >
+          <input type="hidden" value="{{idsellcat}}" name="idsellcat" >
+      <td><div align="center"><input type="number" min="1" value="1" name="qty" style="width:5vw;"></div></td>
+      <td><div align="center"><input type="submit" value="Cart"></div></td>
+      </form>
+<!--       <td width="80"><div align="center" ><a href="/#ViewImage?id={{ row['idcategory'] }}">View Images</a></div></td>-->
+<!--        <td width="80"><div align="center" ><a href="#/ViewVariety?id={{ row['idcategory'] }}">View Variety</a></div></td>-->
+<!--  <td width="80"><div align="center" ><a href="#/ViewDisease?id={{ row['idcategory'] }}">View Disease</a></div></td>-->
+         </tr>
+
+        {% endfor %}
+
+
+</table>
+{% include 'LoginFooter.html' %}

@@ -1,0 +1,74 @@
+{% include 'AdminPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+<!--<form id="form1" name="form1" method="post" action="ReplyQuery">-->
+
+<!--        <table width="318" border="0" align="center" id="cs">-->
+<!--            <tr><th colspan="2"><h2>Reply Query</h2></th></tr>-->
+
+
+
+
+<!--           <tr><th>Reply</th><td><textarea name="TxtReply"  required> </textarea></td></tr>-->
+<!--            <tr>-->
+<!--                <td>&nbsp;</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+<!--</form>-->
+
+<form id="form1" name="form1" method="post" action="ReplyQuery">
+<div class="container">
+        <table width="318" border="0" align="center" id="cs">
+            <tr><th colspan="2"><h2>Add Reply</h2></th></tr>
+
+
+
+
+           <tr><th>Reply</th><td><textarea name="TxtReply"class="form-control"  required> </textarea></td></tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+</div>
+</form>
+</body>
+</html>
+{% include 'LoginFooter.html' %}

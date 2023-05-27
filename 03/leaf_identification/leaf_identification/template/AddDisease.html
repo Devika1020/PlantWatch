@@ -1,0 +1,79 @@
+{% include 'AdminPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+               .containerP {
+              margin: 20px auto;
+              padding: 20px;
+              width: 800px;
+          }
+    </style>
+</head>
+<body>
+
+<!--<form id="form1" name="form1" method="post" action="AddDisease">-->
+
+<!--        <table width="318" border="0" align="center" id="cs">-->
+<!--            <tr><th colspan="2"><h2>Add Disease</h2></th></tr>-->
+
+<!--                <tr><th>Name</th><td><input name="TxtName" type="text" required ></td></tr><br>-->
+<!--               <tr><th>Description</th><td><textarea name="Txtdesc" required></textarea></td></tr>-->
+
+
+<!--            <tr>-->
+<!--                <td>&nbsp;</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+<!--</form>-->
+
+<form id="form1" name="form1" method="post" action="AddDisease">
+<div class="containerP">
+        <table width="318" border="0" align="center" id="cs">
+            <tr><th colspan="2"><h2>Add Disease</h2></th></tr>
+
+                <tr><th>Name</th><td><input class="form-control" name="TxtName" type="text" required ></td></tr><br>
+               <tr><th>Description</th><td><textarea class="form-control" name="Txtdesc" required></textarea></td></tr>
+
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+</div>
+</form>
+</body>
+</html>
+{% include 'LoginFooter.html' %}

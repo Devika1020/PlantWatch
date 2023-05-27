@@ -1,0 +1,143 @@
+{% include 'AdminPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+
+     .containerP {
+        margin: 20px auto;
+        padding: 20px;
+        width: 900px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #eaeaea;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #eaeaea;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .link:hover {
+        text-decoration: underline;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #8bc34a;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #689f38;
+        color:#000000;
+    }
+
+    </style>
+</head>
+
+<!--<h2>View Plants</h2>-->
+<!--<table id="cs">-->
+<!--    <tr>-->
+<!--        <td><h4>SL.No</h4></td>-->
+<!--        <td><h4>Name</h4> </td>-->
+<!--        <td><h4>Address</h4> </td>-->
+<!--        <td><h4>Phone</h4> </td>-->
+<!--        <td><h4>Email</h4> </td>-->
+<!--        <td><h4>Password</h4> </td>-->
+<!--        <td><h4>Purchases</h4></td>-->
+<!--    </tr>-->
+<!--    {% for row in data %}-->
+<!--  <tr>-->
+<!--      <td height="87"><div align="center">{{loop.index }}</div></td>-->
+<!--      <td><div align="center">{{ row['name'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['address'] }}</div></td>-->
+<!--       <td width="80"><div align="center" >{{ row['phone'] }} </div></td>-->
+<!--            <td width="80"><div align="center" >{{ row['email'] }}</div></td>-->
+<!--      <td width="80"><div align="center" >{{ row['password'] }}</div></td>-->
+<!--      <td width="80"><div align="center"><a href="adminviewshoporders?id={{ row['idshop'] }}">View</a></div></td>-->
+<!--      </tr>-->
+
+<!--        {% endfor %}-->
+
+
+<div class="containerP">
+    <h2>View Shops</h2>
+    <table id="cs">
+        <tr>
+            <th>SL.No</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Purchases</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ row['name'] }}</td>
+                <td>{{ row['address'] }}</td>
+                <td>{{ row['phone'] }}</td>
+                <td>{{ row['email'] }}</td>
+                <td>{{ row['password'] }}</td>
+                <td><a href="adminviewshoporders?id={{ row['idshop'] }}" class="button">View</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!--</table>-->
+{% include 'LoginFooter.html' %}

@@ -1,0 +1,35 @@
+{% include 'User/UserPageHeader.html' %}
+
+
+<html lang="en">
+<body>
+<form id="form1" name="form1" method="post" action="/add_to_cart" align="center">
+
+  <table align="center" width="200" border="0" >
+    <tr>
+      <td colspan="1" align="right">
+        <h2 >Add Quantity</h2>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <th>Enter Quantity</th>
+      <td><label for="uname"></label>
+      <input type="text" name="quantity" id="uname" maxlength="4" size="4" align="center" required/></td>
+    </tr>
+
+    <tr>
+ <td><label for="uname"></label>
+      <td><input  name="login" type="submit" id="login" value="Add" align="right" class="section-btn"/></td>
+
+
+    </tr>
+  </table>
+
+</form>
+
+</body>
+</html>
+{% include 'LoginFooter.html' %}

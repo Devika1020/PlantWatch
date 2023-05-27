@@ -1,0 +1,55 @@
+ {% include 'User/UserPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<!-- <br/>-->
+<!-- <h3><div align="center">Search Symptom</div></h3>-->
+<!--  <br/>-->
+<!-- <br/>-->
+<!-- <form action="search_action" method="post">-->
+<!--<table id="cs">-->
+<!--    <tr>-->
+<!--        <td><h4>Enter Symptom</h4></td>-->
+<!--        <td><h4> <input type="text" name="txtSym"/> </h4> </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td height="87"><div align="center"> </div></td>-->
+<!--      <td> <input type="submit" value="Submit"> </td>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--     </form>-->
+  <br/><br/>
+ <div class="container">
+ <h3><div align="center">Search Symptoms</div></h3>
+  <br/>
+ <br/>
+ <form action="search_action" method="post">
+
+<table id="cs">
+    <tr>
+        <td><span>Enter Symptom</span></td>
+        <td><h4> <input type="text" class="form-control" name="txtSym"/> </h4> </td>
+    </tr>
+    <tr>
+      <td height="87"><div align="center"> </div></td>
+      <td> <input type="submit" class="section-btn" value="Submit"> </td>
+    </tr>
+</table>
+     </form>
+          </div>
+{% include 'LoginFooter.html' %}

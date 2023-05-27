@@ -1,0 +1,199 @@
+{% include 'User/UserPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+<h2 align="center">Enter Card Details</h2>
+<!--<form id="form1" name="form1" method="post" action="cardvalidate" enctype = "multipart/form-data">-->
+
+<!--        <table width="318" border="0" id="cs" align="center">-->
+
+<!--           <tr>-->
+
+<!--                <td>Card Number:</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="number" name="accno" required />-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+
+<!--                <td>Cvv Number:</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="number" name="cvv" required  maxlength="3" />-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+
+<!--                <td>Expiry Date:</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--&lt;!&ndash;                        <input type="date" name="exp"  required  />&ndash;&gt;-->
+<!--                        <input type="date" class="form-control" id="exp" name="exp" required>-->
+<!--                        <script>-->
+<!--                          $(document).ready(function () {-->
+<!--                            // Get the check-in and check-out date input fields-->
+<!--                            var checkInDate = $('input[name="exp"]');-->
+
+<!--                            // Add change event listener to the check-in date input field-->
+<!--                            checkInDate.on("change", function () {-->
+<!--                              // Get the selected check-in date-->
+<!--                              var selectedCheckInDate = new Date($(this).val());-->
+
+<!--                              // Check if the selected check-in date is in the past-->
+<!--                              if (selectedCheckInDate < new Date()) {-->
+<!--                                // $(this).val("");-->
+<!--                                alert("Date cannot be in the past.");-->
+<!--                                $(this).val(""); // Clear the input field-->
+<!--                                return false;-->
+<!--                              }-->
+<!--                            });-->
+<!--                          });-->
+<!--                        </script>-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+
+<!--                <td>Card Holder:</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="text" name="cardholder" required />-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>&nbsp;</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="submit" name="Submit" value="Submit" class="section-btn"/>-->
+<!--                    </label>-->
+<!--                </td>-->
+
+<!--        </table>-->
+
+<!--</form>-->
+
+
+
+<script>
+    function validateForm() {
+        var accno = document.forms["form1"]["accno"].value;
+        var cvv = document.forms["form1"]["cvv"].value;
+        var exp = document.forms["form1"]["exp"].value;
+        var cardholder = document.forms["form1"]["cardholder"].value;
+
+        // Check if Card Number is a valid number
+        if (isNaN(accno)) {
+            alert("Please enter a valid Card Number.");
+            return false;
+        }
+
+        // Check if CVV is a 3-digit number
+        if (!/^\d{3}$/.test(cvv)) {
+            alert("Please enter a valid 3-digit CVV number.");
+            return false;
+        }
+
+        // Check if Expiry Date is selected
+        if (exp === "") {
+            alert("Please select an Expiry Date.");
+            return false;
+        }
+
+        // Check if Expiry Date is not a previous date
+        var currentDate = new Date();
+        var selectedDate = new Date(exp);
+        if (selectedDate < currentDate) {
+            alert("Please select a future date for the Expiry Date.");
+            return false;
+        }
+
+        // Check if Card Holder is not empty
+        if (cardholder.trim() === "") {
+            alert("Please enter the Card Holder's name.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+
+<form id="form1" name="form1" method="post" action="cardvalidate" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <table width="318" border="0" id="cs" align="center">
+        <tr>
+            <td>Card Number<span class="text-muted">(last 4 digits)</span>:</td>
+            <td>
+                <label>
+                    <input type="number" name="accno" required />
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Cvv Number:</td>
+            <td>
+                <label>
+                    <input type="number" name="cvv" required maxlength="3" />
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Expiry Date:</td>
+            <td>
+                <label>
+                    <input type="date" class="form-control" id="exp" name="exp" required>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Card Holder:</td>
+            <td>
+                <label>
+                    <input type="text" name="cardholder" required />
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <label>
+                    <input type="submit" name="Submit" value="Submit" class="section-btn"/>
+                </label>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

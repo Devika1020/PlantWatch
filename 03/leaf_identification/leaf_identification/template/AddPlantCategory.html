@@ -1,0 +1,84 @@
+{% include 'AdminPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+                         .containerP {
+                margin: 20px auto;
+                padding: 20px;
+                width: 800px;
+            }
+
+    </style>
+</head>
+<body>
+
+<!--<form id="form1" name="form1" method="post" action="AddPlantCategory">-->
+
+<!--        <table width="318" border="0" align="center" id="cs">-->
+<!--            <tr><th colspan="2"><h2>Add Plant Category</h2></th></tr>-->
+
+<!--                <tr><th>Name</th><td><input name="TxtName" type="text" required ></td></tr><br>-->
+
+
+<!--            <tr>-->
+<!--                <td>&nbsp;</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+<!--</form>-->
+<form id="form1" name="form1" method="post" action="AddPlantCategory">
+<div class="containerP">
+        <table width="318" border="0" align="center" id="cs">
+            <tr><th colspan="2"><h2>Add Plant Category</h2></th></tr>
+                <tr><th>Name</th>
+                    <td>
+                <select name="TxtName" class="form-control" required>
+                  <option value="">-- Select Plant Category --</option>
+                  <option value="flowers">Flowers</option>
+                  <option value="flowers">Medicine</option>
+                  <option value="vegetables">Vegetables</option>
+                  <option value="fruits">Fruits</option>
+                  <option value="herbs">Herbs</option>
+                </select>
+                    </td></tr><br>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+</div>
+</form>
+</body>
+</html>
+{% include 'LoginFooter.html' %}

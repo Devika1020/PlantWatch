@@ -1,0 +1,111 @@
+{% include 'AdminPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+
+<!--<div class="container">-->
+<!--<h2>Ordered Items</h2>-->
+<!--<table id="cs">-->
+<!--    <tr>-->
+<!--        <td><h4><div align="center">SL.No</div></h4></td>-->
+<!--        <td><h4><div align="center">Product Name</div></h4> </td>-->
+<!--        <td><h4><div align="center">Shop</div></h4> </td>-->
+<!--        <td><h4><div align="center">Quantity</div></h4></td>-->
+<!--        <td><h4><div align="center">Price</div></h4></td>-->
+<!--        <td><h4><div align="center">Date</div></h4></td>-->
+<!--    </tr>-->
+<!--    {% for row in data %}-->
+
+<!--  <tr>-->
+<!--      <td height="87"><div align="center">{{loop.index }}</div></td>-->
+<!--      <td><div align="center">{{ row['item_name'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['name'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['quantity'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['price'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['date'] }}</div></td>-->
+<!--&lt;!&ndash;       <td width="80"><div align="center" ><a href="/#ViewImage?id={{ row['idcategory'] }}">View Images</a></div></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td width="80"><div align="center" ><a href="#/ViewVariety?id={{ row['idcategory'] }}">View Variety</a></div></td>&ndash;&gt;-->
+<!--&lt;!&ndash;  <td width="80"><div align="center" ><a href="#/ViewDisease?id={{ row['idcategory'] }}">View Disease</a></div></td>&ndash;&gt;-->
+<!--  </tr>-->
+
+<!--        {% endfor %}-->
+
+
+<!--</table>-->
+<!--    </div>-->
+
+
+<style>
+    .containerP {
+        margin: 20px auto;
+        width: 80%;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #cs {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #cs th, #cs td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ccc;
+    }
+
+    #cs th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<div class="containerP">
+    <h2>Ordered Items</h2>
+    <table id="cs">
+        <tr>
+            <th>SL. No</th>
+            <th>Product Name</th>
+            <th>Shop</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ row['item_name'] }}</td>
+                <td>{{ row['name'] }}</td>
+                <td>{{ row['quantity'] }}</td>
+                <td>{{ row['price'] }}</td>
+                <td>{{ row['date'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% include 'LoginFooter.html' %}

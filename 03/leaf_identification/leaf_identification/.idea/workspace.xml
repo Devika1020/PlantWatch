@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="13741d9a-db18-4659-a11c-0f56f3c6b84b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1tyVmDmGwoXAdp9FEMI7zGWJLhx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\03\leaf_identification\leaf_identification" />
+      <recent name="C:\03\leaf_identification\leaf_identification\static\image" />
+      <recent name="D:\aneesha\leaf_identification\template\User" />
+      <recent name="D:\aneesha\leaf_identification" />
+      <recent name="D:\aneesha\leaf_identification\static\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Home" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="leaf_identification" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Home.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Home" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13741d9a-db18-4659-a11c-0f56f3c6b84b" name="Default Changelist" comment="" />
+      <created>1623741472431</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623741472431</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="400" y="163" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1682395298415">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="400" y="163" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.720@0.0.1366.720" timestamp="1682395298415" />
+    <state x="462" y="114" key="FileChooserDialogImpl" timestamp="1680524040088">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="462" y="114" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1680524040088" />
+    <state width="1345" height="91" key="GridCell.Tab.0.bottom" timestamp="1684731897272">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state width="1345" height="91" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1684731897272" />
+    <state width="1345" height="91" key="GridCell.Tab.0.center" timestamp="1684731897272">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state width="1345" height="91" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1684731897272" />
+    <state width="1345" height="91" key="GridCell.Tab.0.left" timestamp="1684731897272">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state width="1345" height="91" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1684731897272" />
+    <state width="1345" height="91" key="GridCell.Tab.0.right" timestamp="1684731897272">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state width="1345" height="91" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1684731897272" />
+    <state x="184" y="2" key="SettingsEditor" timestamp="1680590233381">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="184" y="2" key="SettingsEditor/0.0.1366.720@0.0.1366.720" timestamp="1680590233381" />
+    <state x="379" y="184" key="com.intellij.ide.util.TipDialog" timestamp="1680523984142">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="379" y="184" key="com.intellij.ide.util.TipDialog/0.0.1366.720@0.0.1366.720" timestamp="1680523984142" />
+    <state x="346" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1683956979961">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="346" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1366.720@0.0.1366.720" timestamp="1683956979961" />
+  </component>
+</project>

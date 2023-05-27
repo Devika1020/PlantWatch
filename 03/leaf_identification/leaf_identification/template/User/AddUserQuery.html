@@ -1,0 +1,73 @@
+{% include 'User/UserPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+<!--<form id="form1" name="form1" method="post" action="AddUserQuery">-->
+
+<!--        <table width="318" border="0" align="center" id="cs">-->
+<!--            <tr><th colspan="2"><h2>User Query</h2></th></tr>-->
+
+
+<!--               <tr><th>Query</th><td><textarea name="Txtdesc" required></textarea></td></tr>-->
+
+
+<!--            <tr>-->
+<!--                <td>&nbsp;</td>-->
+<!--                <td>-->
+<!--                    <label>-->
+<!--                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>-->
+<!--                    </label>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+<!--</form>-->
+<form id="form1" name="form1" method="post" action="AddUserQuery">
+
+<div class="container">
+        <table align="center" id="cs">
+            <tr><th colspan="2"><h2>User Query</h2></th></tr>
+               <tr><th>Your Question</th><td><textarea name="Txtdesc" class="form-control" required></textarea></td></tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="reset" name="Clear" value="Reset"  class="section-btn"/>
+                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+</div>
+
+</form>
+</body>
+</html>
+{% include 'LoginFooter.html' %}

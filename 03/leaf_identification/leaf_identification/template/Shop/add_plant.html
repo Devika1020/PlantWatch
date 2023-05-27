@@ -1,0 +1,60 @@
+{% include 'Shop/ShopHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+<form id="form1" name="form1" method="post" action="../adding_plant">
+
+        <table width="318" border="0" align="center" id="cs">
+            <tr><th colspan="2"><h2>Add Plants</h2></th></tr>
+
+                <tr>
+                    <th>Name</th>
+                    <td><input name="name"value="{{item_name}}" type="text" readonly ></td>
+                    <input type="hidden" value ="{{item_id}}" name ="item_id">
+                </tr><br>
+            <tr>
+                <th>Price</th>
+                <td><input name="price"  type="number" required min="0" ></td>
+            </tr><br>
+             <tr>
+                <th>Quantity</th>
+                <td><input name="qty"  type="number" required min="1" ></td>
+            </tr>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+</form>
+</body>
+</html>
+{% include 'LoginFooter.html' %}

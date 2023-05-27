@@ -1,0 +1,85 @@
+{% include 'AdminPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+
+<!--<h2>View Plant Variety</h2>-->
+<!--<table id="cs">-->
+<!--    <tr>-->
+<!--        <td><h4>SL.No</h4></td>-->
+
+<!--        <td><h4>Name</h4> </td>-->
+<!--         <td><h4>Leaf Description</h4> </td>-->
+
+
+
+
+
+
+<!--    </tr>-->
+<!--    {% for row in data %}-->
+
+<!--  <tr>-->
+<!--      <td height="87"><div align="center">{{loop.index }}</div></td>-->
+<!--      <td><div align="center">{{ row['name'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['leaf_description'] }}</div></td>-->
+
+<!--       <td width="80"><div align="center" ><a href="/LinkEditPlantVariety?id={{ row['idplant_details'] }}">Edit</a></div></td>-->
+<!--            <td width="80"><div align="center" ><a href="/DeletePlantVariety?id={{ row['idplant_details'] }}">Delete</a></div></td>-->
+
+<!--         </tr>-->
+
+<!--        {% endfor %}-->
+
+
+<!--</table>-->
+<div class="container">
+    <h2 class="text-center">View Plant Variety</h2>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Leaf Description</th>
+                <th colspan="2" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td class="text-center">{{ loop.index }}</td>
+                <td>{{ row['name'] }}</td>
+                <td>{{ row['leaf_description'] }}</td>
+                <td class="text-center">
+                    <a href="/LinkEditPlantVariety?id={{ row['idplant_details'] }}" class="btn btn-primary">Edit</a>
+                </td>
+                <td class="text-center">
+                    <a href="/DeletePlantVariety?id={{ row['idplant_details'] }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% include 'LoginFooter.html' %}

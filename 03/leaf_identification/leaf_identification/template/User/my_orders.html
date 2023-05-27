@@ -1,0 +1,128 @@
+{% include 'User/UserPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+
+<!--<div class="container">-->
+<!--<h2>My Orders</h2>-->
+<!--<table id="cs">-->
+<!--    <tr>-->
+<!--        <td><h4><div align="center">SL.No</div></h4></td>-->
+<!--        <td><h4><div align="center">Bill Id</div></h4> </td>-->
+<!--        <td><h4><div align="center">Date</div></h4> </td>-->
+<!--        <td><h4><div align="center">Total Amount</div></h4></td>-->
+<!--        <td><h4><div align="center">Orders</div></h4></td>-->
+
+<!--    </tr>-->
+<!--    {% for row in data %}-->
+
+<!--  <tr>-->
+<!--      <td height="87"><div align="center">{{loop.index }}</div></td>-->
+<!--      <td><div align="center">{{ row['idbills'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['date'] }}</div></td>-->
+<!--      <td><div align="center">{{ row['total_amount'] }}</div></td>-->
+<!--      <td><div align="center"><a href="vieworders?id={{row['idbills']}}">View</a></div></td>-->
+<!--&lt;!&ndash;       <td width="80"><div align="center" ><a href="/#ViewImage?id={{ row['idcategory'] }}">View Images</a></div></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td width="80"><div align="center" ><a href="#/ViewVariety?id={{ row['idcategory'] }}">View Variety</a></div></td>&ndash;&gt;-->
+<!--&lt;!&ndash;  <td width="80"><div align="center" ><a href="#/ViewDisease?id={{ row['idcategory'] }}">View Disease</a></div></td>&ndash;&gt;-->
+<!--  </tr>-->
+
+<!--        {% endfor %}-->
+
+<!--</table>-->
+<!--    </div>-->
+
+
+<style>
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    a {
+        text-decoration: none;
+        color: #065fd4;
+    }
+        .view-button {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #065fd4;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .view-button:hover {
+        background-color: #0447a8;
+    }
+</style>
+
+<div class="container">
+    <h2>My Orders</h2>
+    <table id="cs">
+        <thead>
+            <tr>
+                <th>SL. No</th>
+                <th>Bill Id</th>
+                <th>Date</th>
+                <th>Total Amount</th>
+                <th>Orders</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row['idbills'] }}</td>
+                    <td>{{ row['date'] }}</td>
+                    <td>{{ row['total_amount'] }}</td>
+                    <td><a href="vieworders?id={{ row['idbills'] }}" class="view-button">View</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% include 'LoginFooter.html' %}
